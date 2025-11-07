@@ -148,7 +148,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
+  align-items: stretch;
   background-color: #f0f0f0;
   text-align: center;
   color: #000;
