@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game 2 - Starling_forge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="navbar">
+        <a href="index.html" class="logo">Starling Forge</a>
+            <nav>
+              <a href="support.html">Support</a>
+              <a href="our_teams.html">Our Teams</a>
+            </nav>    </header>
+
+    <main class="main-fullscreen">
+        <div>
+            <h1>Gameplay</h1>
+            <p>Konten untuk demo gameplay akan ditampilkan di sini.</p>
+        </div>
+        <div id="overview" class="section light">
+            <h1>Overview</h1>
+            <div class="overview-text">
+                <p>
+                Starling_forge adalah game edukasi bertema Shooting, memiliki beberapa stage yaitu stage Matematika dan stage Bahasa Inggris.
+                Dirancang untuk membantu anak-anak sekolah dasar memahami konsep dasar pembelajaran Matematika dan belajar bahasa Inggris
+                dalam bentuk typing interaktif. Pemain akan menghadapi musuh dengan cara memberikan jawaban benar untuk mendapatkan poin dan membuka level baru.
+                </p>
+                <p>
+                <br>Jenis & Genre: Edukasi - Simulasi Wave Shooting.
+
+                </p>
+                <br>Platform: PC (Windows)
+                </p>
+                <br><strong>Tujuan Utama:</strong> Meningkatkan kemampuan berhitung, berbahasa Inggris, dan logika berpikir anak melalui mini-game yang seru.
+            </p>
+            </div>
+        </div>
+        <div>
+            <h1>Features</h1>
+            <p>Konten untuk fitur game akan ditampilkan di sini.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Starling Studio</p>
+        <p>| <a href="support.html">Support</a></p>
+    </footer>
+
+    <script>
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById('navbar');
+    
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            navbar.classList.add('hidden');
+          } else {
+            navbar.classList.remove('hidden');
+          }
+          lastScrollY = window.scrollY;
+    
+          if (window.scrollY > 50) {
+            navbar.classList.add('navbar-scrolled');
+          } else {
+            navbar.classList.remove('navbar-scrolled');
+          }
+        });
+    
+        document.addEventListener('mousemove', (e) => {
+          if (e.clientY < 100) { // Jika kursor berada di 100px teratas
+            navbar.classList.remove('hidden');
+          } else {
+            if (window.scrollY > 100) {
+              navbar.classList.add('hidden');
+            }
+          }
+        });
+      </script>
+</body>
+</html>

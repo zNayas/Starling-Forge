@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Index</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header id="navbar">
+    <a href="index.html" class="logo">Starling Forge</a>
+    <nav>
+      <a href="support.html">Support</a>
+      <a href="our_teams.html">Our Teams</a>
+    </nav>
+  </header>
+
+  <div class="banner" style="background-image: url('Banner_background.jpeg'); background-size: cover; background-position: center;">
+    <div class="content">
+      <h1>Start Learning</h1>
+    </div>
+  </div>
+
+  <div class="our-games">
+    <h2>Our games</h2>
+    <div class="our-games-container">
+      <a href="Game1.html" class="our-games-card" style="background-image: url('Space_Invader.png'); background-size: cover; background-position: center;">
+        <div class="game-title-container">
+          <h3>Space Invader</h3>
+        </div>
+      </a>
+      <div class="our-games-card">
+        <div class="game-title-container">
+          <h3>Coming soon</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Starling Studio</p>
+    <p>| <a href="support.html">Support</a></p>
+  </footer>
+
+  <script>
+    var lastScrollTop = 0;
+    var navbar = document.getElementById("navbar");
+    var isNavbarHiddenByScroll = false;
+
+    window.addEventListener("scroll", function() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) { // Scrolling Down
+            if (scrollTop > 50) { // Only hide if scrolled past navbar height
+                navbar.style.top = "-50px";
+                isNavbarHiddenByScroll = true;
+            }
+        } else { // Scrolling Up
+            navbar.style.top = "0";
+            isNavbarHiddenByScroll = false;
+        }
+        lastScrollTop = scrollTop;
+    });
+
+    window.addEventListener("mousemove", function(event) {
+        // Only activate mouseover reveal if the navbar is currently hidden by scroll
+        if (isNavbarHiddenByScroll) {
+            if (event.clientY < 50) { // Mouse near top
+                navbar.style.top = "0";
+            } else { // Mouse moved away from top
+                // If the navbar was revealed by mouse, hide it again
+                // But only if it's currently visible (top is 0)
+                if (navbar.style.top === "0px") {
+                    navbar.style.top = "-50px";
+                }
+            }
+        }
+    });
+  </script>
+
+</body>
+</html>

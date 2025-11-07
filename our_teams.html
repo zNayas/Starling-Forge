@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starling_forge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="navbar">
+        <a href="index.html" class="logo">Starling Forge</a>
+            <nav>
+              <a href="support.html">Support</a>
+              <a href="our_teams.html">Our Teams</a>
+            </nav>    </header>
+
+    <main class="main-fullscreen">
+        <div>
+            <h1>Credit</h1>
+            <div class="our-teams-container">
+                <div class="our-teams-card">
+                    <h3>Game Designer</h3>
+                    <p>Pio Rivaldi</p>
+                </div>
+                <div class="our-teams-card">
+                    <h3>Game Artist</h3>
+                    <p>Izhar Riyadi</p>
+                </div>
+                <div class="our-teams-card">
+                    <h3>Game Programmer</h3>
+                    <p>Luthfi Achmad</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Starling Studio</p>
+        <p>| <a href="support.html">Support</a></p>
+    </footer>
+
+    <script>
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById('navbar');
+    
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            navbar.classList.add('hidden');
+          } else {
+            navbar.classList.remove('hidden');
+          }
+          lastScrollY = window.scrollY;
+    
+          if (window.scrollY > 50) {
+            navbar.classList.add('navbar-scrolled');
+          } else {
+            navbar.classList.remove('navbar-scrolled');
+          }
+        });
+    
+        document.addEventListener('mousemove', (e) => {
+          if (e.clientY < 100) { // Jika kursor berada di 100px teratas
+            navbar.classList.remove('hidden');
+          } else {
+            if (window.scrollY > 100) {
+              navbar.classList.add('hidden');
+            }
+          }
+        });
+    </script>
+</body>
+</html>
