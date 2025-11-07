@@ -1,0 +1,314 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 0; /* Remove padding from body */
+}
+
+.banner {
+  margin-top: 50px; /* Adjusted margin to further reduce gap */
+  height: calc(100vh - 50px);
+}
+
+header {
+  padding: 10px 40px; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;             
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+header .logo {
+  color: #fff;
+  font-size: 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav {
+  display: flex;
+}
+
+header nav a {
+  color: #ddd;
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 1em;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #fff;
+}
+
+
+.banner {
+  height: calc(100vh - 50px);
+  background: url('https://via.placeholder.com/1600x900') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.banner .content {
+  color: #fff;
+  max-width: 600px;
+}
+
+.banner h1 {
+  font-size: 3em;
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+
+.banner p {
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+.section.light {
+  background: #111;
+}
+
+footer {
+  background: #111;
+  color: #777;
+  text-align: center;
+  padding: 30px 10px;
+  margin-top: auto; /* Mendorong footer ke bagian bawah */
+}
+
+footer a {
+  color: #777;
+  text-decoration: none;
+  margin: 0 8px;
+  margin-top: auto;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+#navbar {
+  position: fixed; /* Required for positioning */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  transition: top 0.4s ease, background-color 0.5s ease; /* Tambahkan transisi untuk warna */
+  z-index: 999;
+  border-bottom: 1px solid #444; /* Add a bottom border */
+}
+
+
+main {
+  margin-top: 100px;
+  text-align: center;
+  color: white;
+}
+
+/* Style untuk membuat main content fullscreen */
+.main-fullscreen {
+  flex-grow: 1; /* Membuat <main> mengisi sisa ruang */
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px; /* Memberi jarak dari navbar */
+}
+
+/* Modifier untuk memusatkan konten di tengah secara vertikal */
+.main-fullscreen.center-content {
+  padding-top: 0;
+  justify-content: center;
+}
+
+.overview-text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: justify;
+  line-height: 1.6;
+  color: #ddd; 
+  font-size: 1.1em;
+}
+
+.our-games {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f0f0f0;
+  text-align: center;
+  color: #000;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 80vh; /* Atur tinggi minimal area ini untuk efek di tengah */
+}
+
+/* Our Games Section */
+.our-games-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.our-games-card {
+  position: relative; /* Diperlukan untuk positioning absolut di dalamnya */
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 0; /* Hapus padding karena teks diposisikan secara absolut */
+  width: 400px;
+  height: 500px; /* Beri tinggi agar kartu terlihat */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  transition: 0.3s ease;
+  overflow: hidden; /* Sembunyikan konten yang keluar dari kartu */
+}
+
+.our-games-card:hover {
+  background-color: #222;
+  transform: translateY(-5px);
+}
+
+.game-title-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Warna taskbar, bisa diubah */
+  padding: 15px;
+  z-index: 1;
+}
+
+.our-games-card h3 {
+  color: #ffcc00;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.our-games-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 170%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.753) 20%, transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.our-games-card:hover::before {
+  opacity: 1;
+}
+
+.our-games-card .game-description {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  font-size: 0.9em;
+  color: #ccc;
+  margin: 0;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.our-games-card:hover .game-description {
+  opacity: 1;
+  transform: translateY(-30%);
+}
+
+
+/* Our Teams Section */
+.our-teams-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.our-teams-card {
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 20px 30px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  transition: 0.3s ease;
+}
+
+.our-teams-card:hover {
+  background-color: #222;
+  transform: translateY(-5px);
+}
+
+.our-teams-card h3 {
+  color: #ffcc00;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.our-teams-card p {
+  color: #ddd;
+  font-size: 1.1em;
+  margin: 0;
+}
+
+/* Support Section */
+.support-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.support-card {
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 20px 30px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  transition: 0.3s ease;
+}
+
+.support-card:hover {
+  background-color: #222;
+  transform: translateY(-5px);
+}
+
+.support-card h3 {
+  color: #ffcc00;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.support-card p {
+  color: #ddd;
+  font-size: 1.1em;
+  margin: 0;
+}
