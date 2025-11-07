@@ -238,6 +238,12 @@ main {
   transform: translateY(-30%);
 }
 
+.space-invader-card {
+  background-image: url('Space_Invader.png');
+  background-size: cover;
+  background-position: center;
+}
+
 
 /* Our Teams Section */
 .our-teams-container {
